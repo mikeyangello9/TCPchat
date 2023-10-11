@@ -20,6 +20,8 @@ while True:
     try:
         communication_socket, address = s.accept()  ## the communication socket is to communicate with the client
         print(f"connected to {address}")
+        client_list.append(address)
+        print (client_list)
         message = communication_socket.recv((1024))  ## anticipate the clients message 
 
      
