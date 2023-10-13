@@ -23,6 +23,7 @@ while True:
         client_list.append(address)
         print (client_list)
         message = communication_socket.recv((1024))  ## anticipate the clients message 
+        
 
      
         print(f"message from client is: {message.decode('utf-8')}")
@@ -36,7 +37,7 @@ while True:
         communication_socket.send(server_reply.encode('utf-8'))
         print(f"connection with {address} has been closed!")
         communication_socket.close()
-    if not message:
+    if not message and server_reply == "/close":
         break
     
 
